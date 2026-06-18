@@ -906,3 +906,155 @@ footer {
   .stat-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .contact-form { padding: 24px; }
 }
+
+/* ============================================================
+   PARTICLE CANVAS
+   ============================================================ */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-bg { z-index: 0; }
+.hero-content { z-index: 2; }
+.hero-scroll { z-index: 2; }
+
+/* ============================================================
+   TYPEWRITER
+   ============================================================ */
+.typewriter-text {
+  color: var(--gold);
+  font-weight: 700;
+}
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 300;
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================================
+   HERO TITLE ANIMATION
+   ============================================================ */
+.hero-title-mans {
+  display: inline-block;
+  background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title-solution {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold) 0%, #f0d98a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   SLIDE ANIMATIONS
+   ============================================================ */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.scale-up {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-left.visible,
+.slide-right.visible,
+.scale-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   GLOW CARD HOVER
+   ============================================================ */
+.service-card {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--radius) + 1px);
+  background: linear-gradient(135deg, rgba(9,134,192,0), rgba(9,134,192,0));
+  transition: background 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+.service-card:hover::before {
+  background: linear-gradient(135deg, rgba(9,134,192,0.5), rgba(217,193,129,0.35));
+}
+.service-card-img,
+.service-card-body {
+  position: relative;
+  z-index: 1;
+}
+.service-card {
+  will-change: transform;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+}
+
+/* ============================================================
+   SHIMMER BUTTON
+   ============================================================ */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.btn-primary:hover::after {
+  left: 140%;
+}
+
+/* ============================================================
+   STATS BAR DIVIDERS (override)
+   ============================================================ */
+.stat-item {
+  transition: transform 0.3s ease;
+}
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   NAVBAR LOGO SIZE
+   ============================================================ */
+.navbar-logo img {
+  height: 46px;
+  width: auto;
+}
+.footer-brand img {
+  height: 46px;
+  margin-bottom: 16px;
+}

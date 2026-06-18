@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" fill="none">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0986c0"/>
+      <stop offset="100%" stop-color="#06c6f0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- M backbone -->
+  <path d="M7 44 L7 8 L26 28 L45 8 L45 44"
+        stroke="url(#lg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Network cross-connections (dashed) -->
+  <line x1="7" y1="44" x2="26" y2="28" stroke="#d9c181" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.45"/>
+  <line x1="45" y1="44" x2="26" y2="28" stroke="#d9c181" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.45"/>
+  <line x1="7" y1="8" x2="45" y2="8" stroke="#d9c181" stroke-width="1" stroke-dasharray="3 3" opacity="0.28"/>
+
+  <!-- Outer pulse ring on center node -->
+  <circle cx="26" cy="28" r="10" stroke="url(#lg)" stroke-width="1" fill="none" opacity="0.35"/>
+  <circle cx="26" cy="28" r="14" stroke="url(#lg)" stroke-width="0.5" fill="none" opacity="0.15"/>
+
+  <!-- Nodes -->
+  <circle cx="7"  cy="44" r="4.5" fill="#d9c181" filter="url(#glow-gold)"/>
+  <circle cx="7"  cy="8"  r="4.5" fill="url(#lg)" filter="url(#glow)"/>
+  <circle cx="26" cy="28" r="5.5" fill="url(#lg)" filter="url(#glow)"/>
+  <circle cx="45" cy="8"  r="4.5" fill="url(#lg)" filter="url(#glow)"/>
+  <circle cx="45" cy="44" r="4.5" fill="#d9c181" filter="url(#glow-gold)"/>
+
+  <!-- Inner dot on center node -->
+  <circle cx="26" cy="28" r="2.5" fill="white" opacity="0.9"/>
+
+  <!-- MANS text -->
+  <text x="62" y="30"
+        font-family="Inter, Segoe UI, system-ui, sans-serif"
+        font-size="23" font-weight="800" fill="white" letter-spacing="-0.8">MANS</text>
+
+  <!-- SOLUTION text -->
+  <text x="63" y="44"
+        font-family="Inter, Segoe UI, system-ui, sans-serif"
+        font-size="9.5" font-weight="600" fill="#d9c181" letter-spacing="4">SOLUTION</text>
+</svg>
